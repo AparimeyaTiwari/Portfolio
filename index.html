@@ -9,93 +9,6 @@
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-  <!-- UX Enhancements (animations, ripple, smooth scroll, active states) -->
-  <style>
-    html { scroll-behavior: smooth; }
-    :root {
-      --accent: #6c63ff;
-      --accent-2: #00d4ff;
-      --text: #eaeaf2;
-      --bg: #0a0a12;
-      --card: #121224;
-      --card-hover: #191933;
-      --link: #9aa3ff;
-      --link-active: #00e0ff;
-      --shadow: 0 10px 25px rgba(0,0,0,.25);
-    }
-
-    body { background: var(--bg); color: var(--text); }
-
-    /* Buttons & links */
-    .btn {
-      position: relative;
-      overflow: hidden;
-      transition: transform .18s ease, background .25s ease, color .25s ease, border-color .25s ease;
-      will-change: transform;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn:active { transform: translateY(0) scale(.98); }
-
-    a { color: var(--link); transition: color .2s ease, background .2s ease; }
-    a:hover { color: var(--accent-2); }
-    a:active { color: var(--link-active); }
-
-    /* Ripple on .btn and nav links */
-    .ripple {
-      position: absolute; border-radius: 50%; transform: scale(0);
-      animation: ripple .6s linear; background: rgba(255,255,255,.35); pointer-events:none;
-    }
-    @keyframes ripple { to { transform: scale(12); opacity: 0; } }
-
-    /* Cards & reveal-on-scroll */
-    .podcast-card, .project, .skills-category, .about-text, .about-stats, .hero-content {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,.06);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
-    }
-    .podcast-card:hover, .project:hover, .skills-category:hover {
-      transform: translateY(-4px);
-      background: var(--card-hover);
-      border-color: rgba(255,255,255,.12);
-      box-shadow: 0 16px 40px rgba(0,0,0,.35);
-    }
-
-    /* Reveal animation */
-    .reveal { opacity: 0; transform: translateY(14px) scale(.98); }
-    .reveal.revealed { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
-
-    /* Podcast grid thumbnails */
-    .podcast-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-      margin-top: 16px;
-    }
-    .podcast-thumb {
-      width: 100%; height: 160px; object-fit: cover; border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.08);
-    }
-
-    /* Navbar active feedback */
-    .navbar a {
-      position: relative;
-    }
-    .navbar a::after {
-      content: "";
-      position: absolute; left: 0; bottom: -6px; height: 2px; width: 0;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      transition: width .25s ease;
-    }
-    .navbar a:hover::after, .navbar a:focus-visible::after { width: 100%; }
-
-    /* Minor spacing tweaks for prettier layout */
-    .section h1 { margin-bottom: 10px; }
-    .project ul, .project-links, .skills-grid { margin-top: 8px; }
-    .podcast-links a { margin-right: 10px; }
-  </style>
 </head>
 
 <body>
@@ -103,24 +16,24 @@
   
   <nav class="navbar">
     <ul>
-      <li><a href="#about" class="btn-link">About Me</a></li>
-      <li><a href="#college" class="btn-link">College</a></li>
-      <li><a href="#projects" class="btn-link">Projects</a></li>
-      <li><a href="#skills" class="btn-link">Skills</a></li>
-      <li><a href="#resume" class="btn-link">Resume</a></li>
-      <li><a href="#podcast" class="btn-link">Podcast</a></li>
-      <li><a href="#contact" class="btn-link">Contact</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#college">College</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#podcast">Podcast</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <section class="hero-section reveal">
+  <section class="hero-section">
     <div class="hero-content">
       <div class="hero-text">
         <h1 class="hero-name">Aparimeya Tiwari</h1>
         <p class="hero-title">Developer • AI Enthusiast • Podcast Host</p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn primary-btn btn-link"><i class="fas fa-code"></i> View Projects</a>
-          <a href="#contact" class="btn secondary-btn btn-link"><i class="fas fa-envelope"></i> Contact Me</a>
+          <a href="#projects" class="btn primary-btn"><i class="fas fa-code"></i> View Projects</a>
+          <a href="#contact" class="btn secondary-btn"><i class="fas fa-envelope"></i> Contact Me</a>
         </div>
       </div>
       <div class="hero-image">
@@ -129,7 +42,7 @@
     </div>
   </section>
 
-  <section id="about" class="section reveal">
+  <section id="about" class="section">
     <h1>About Me</h1>
     <div class="about-content">
       <div class="about-text">
@@ -147,36 +60,40 @@
           <h3>Podcast Episodes</h3>
           <p>27+</p>
         </div>
-        <!-- Removed the Community 1000+ block as requested -->
+        <div class="stat-item">
+          <i class="fas fa-users"></i>
+          <h3>Community</h3>
+          <p>1000+</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="college" class="section reveal">
+  <section id="college" class="section">
     <h1>Education</h1>
     <div class="project">
       <h2>Bachelor of Engineering in Computer Engineering</h2>
       <h3>AISSMS College of Engineering, Pune</h3>
-      <p>Final Year • 2026</p>
-      <p>Current CGPA: <strong>8.81</strong></p>
+      <p>2022 - 2026</p>
+      <p>Current CGPA: 8.68</p>
       <p>Relevant Coursework: Data Structures, Algorithms, Computer Networks, Database Management Systems, Operating Systems, Artificial Intelligence</p>
     </div>
   </section>
 
-  <section id="projects" class="section reveal">
+  <section id="projects" class="section">
     <h1>Featured Projects</h1>
     <div class="project">
       <h2>Lawgic - Law AI Agent</h2>
-      <p>An AI-powered multilingual agent for the Indian legal ecosystem. Built with Azure AI, Chainlit, and Semantic Kernel, Lawgic helps users navigate complex legal queries in multiple Indian languages.</p>
+      <p>An innovative AI-powered multilingual agent designed to revolutionize the Indian legal ecosystem. Built using Azure AI, Chainlit, and Semantic Kernel, Lawgic helps users navigate complex legal queries in multiple Indian languages.</p>
       <ul>
-        <li>Advanced NLP for legal document analysis</li>
-        <li>Multilingual support for Indian languages</li>
-        <li>User-friendly interface with Chainlit</li>
-        <li>Azure AI + Semantic Kernel for robust performance</li>
+        <li>Implemented advanced NLP techniques for legal document analysis</li>
+        <li>Integrated multilingual support for Indian languages</li>
+        <li>Developed a user-friendly interface using Chainlit</li>
+        <li>Built with Azure AI and Semantic Kernel for robust performance</li>
       </ul>
       <div class="project-links">
-        <a class="btn btn-link" href="https://github.com/AparimeyaTiwari/LAWGIC_SUBMISSION" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a class="btn btn-link" href="https://youtu.be/OgEoEoIMP5s" target="_blank"><i class="fab fa-youtube"></i> Demo Video</a>
+        <a href="https://github.com/AparimeyaTiwari/YC_LAWGIC" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://youtu.be/OgEoEoIMP5s" target="_blank"><i class="fab fa-youtube"></i> Demo Video</a>
       </div>
     </div>
 
@@ -189,8 +106,8 @@
         <li>Reduced prep time by 60%</li>
       </ul>
       <div class="project-links">
-        <a class="btn btn-link" href="https://github.com/AparimeyaTiwari/MSQ_Bot_Podcast" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a class="btn btn-link" href="https://youtu.be/gjWOJteTW6M" target="_blank"><i class="fab fa-youtube"></i> Demo Video</a>
+        <a href="https://github.com/AparimeyaTiwari/MSQ_Bot_Podcast" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://youtu.be/gjWOJteTW6M" target="_blank"><i class="fab fa-youtube"></i> Demo Video</a>
       </div>
     </div>
 
@@ -202,65 +119,78 @@
         <li>Integrates <b>LLMs</b> for smarter financial data handling</li>
         <li>Aims to reduce manual effort and improve accuracy</li>
       </ul>
+      <!-- No GitHub link for this project -->
+    </div>
+
+    <div class="project">
+      <h2>ProctoCam</h2>
+      <p>A computer vision-based proctoring tool using OpenCV to detect unfair practices during online exams.</p>
+      <ul>
+        <li>Used <b>OpenCV</b> for real-time video monitoring</li>
+        <li>Implemented detection mechanisms for multiple cheating scenarios</li>
+      </ul>
       <div class="project-links">
-        <a class="btn btn-link" href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://github.com/AparimeyaTiwari/ProctoCam" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="section reveal">
+  <section id="skills" class="section">
     <h1>Technical Skills</h1>
-    <div class="skills-category">
-      <h2>Programming Languages</h2>
-      <div class="skills-grid">
-        <span>C++</span>
-        <span>C</span>
-        <span>Python</span>
-        <span>JavaScript</span>
-      </div>
-    </div>
 
     <div class="skills-category">
-      <h2>Web Technologies</h2>
+      <h2>Languages</h2>
       <div class="skills-grid">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>Flask</span>
+        <span>C++</span>
+        <span>Python</span>
+        <span>C</span>
         <span>MySQL</span>
       </div>
     </div>
 
     <div class="skills-category">
-      <h2>AI & Cloud</h2>
+      <h2>Backend & AI</h2>
       <div class="skills-grid">
-        <span>Autogen</span>
-        <span>Semantic Kernel</span>
+        <span>Flask</span>
+        <span>Retrieval-Augmented Generation</span>
+        <span>Azure AI (Blob Storage, AI Search)</span>
+        <span>Streamlit</span>
         <span>Chainlit</span>
         <span>Ollama</span>
-        <span>Azure</span>
-        <span>AWS</span>
-        <span>GCP</span>
       </div>
     </div>
 
     <div class="skills-category">
-      <h2>Computer Science</h2>
+      <h2>Course Work</h2>
       <div class="skills-grid">
-        <span>DBMS</span>
-        <span>OOP</span>
         <span>Computer Networks</span>
         <span>Operating Systems</span>
+        <span>Object Oriented Programming</span>
+        <span>Database Management System</span>
+        <span>Artificial Intelligence</span>
+      </div>
+    </div>
+
+    <div class="skills-category">
+      <h2>Tools & Cloud</h2>
+      <div class="skills-grid">
+        <span>Git</span>
+        <span>SQL</span>
+        <span>Basic AWS</span>
+        <span>Azure</span>
+        <span>Machine Learning</span>
+        <span>Artificial Intelligence</span>
       </div>
     </div>
   </section>
 
-  <section id="resume" class="section reveal">
+  <section id="resume" class="section">
     <h1>Resume</h1>
     <p>Download my detailed resume to learn more about my experience and qualifications.</p>
-    <a href="Aparimeya_Tiwari_.pdf" download class="btn btn-link"><i class="fas fa-download"></i> Download PDF</a>
+    <a href="Aparimeya_Tiwari_.pdf" download class="btn"><i class="fas fa-download"></i> Download PDF</a>
   </section>
 
-  <section id="podcast" class="section reveal">
+  <section id="podcast" class="section">
     <h1>Entrance & Beyond Podcast</h1>
     <div class="podcast-header">
       <img src="assets/images/podcast/WhatsApp Image 2025-04-02 at 19.10.47.jpeg" alt="Entrance & Beyond Podcast Logo" class="podcast-logo" />
@@ -268,112 +198,69 @@
     </div>
     
     <div class="podcast-platforms">
-      <a href="https://www.youtube.com/@EntranceAndBeyond" target="_blank" class="btn btn-link"><i class="fab fa-youtube"></i> YouTube</a>
-      <a href="https://open.spotify.com/show/2NJeKxxme97rYMlDPtAKFA?si=20820f9d23c54e58" target="_blank" class="btn btn-link"><i class="fab fa-spotify"></i> Spotify</a>
+      <a href="https://www.youtube.com/@EntranceAndBeyond" target="_blank" class="btn"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://open.spotify.com/show/2NJeKxxme97rYMlDPtAKFA?si=20820f9d23c54e58" target="_blank" class="btn"><i class="fab fa-spotify"></i> Spotify</a>
     </div>
 
     <div class="recent-podcasts">
       <h2>Recent Episodes</h2>
-      <div class="podcast-grid">
 
-        <!-- Ep 20 -->
-        <div class="podcast-card">
-          <img class="podcast-thumb" src="https://img.youtube.com/vi/r8dC0aSo9TM/hqdefault.jpg" alt="Ep20 thumbnail" />
-          <h3>How She Broke Into Microsoft &amp; Wells Fargo in 3rd Year — Richa Rathi (Ep. 20)</h3>
-          <p>Strategies and story behind breaking into Microsoft & Wells Fargo during college.</p>
-          <div class="podcast-links">
-            <a class="btn btn-link" href="https://youtu.be/r8dC0aSo9TM?si=-DHqDt8iHns7YJtQ" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-            <a class="btn btn-link" href="https://open.spotify.com/episode/2ZYGJM5oR9soViQD4GRyIt?si=ef8bd840fb2d495d" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
-          </div>
+      <div class="podcast-card">
+        <h3>Episode 1</h3>
+        <p>Exploring insights with top tech minds</p>
+        <div class="podcast-links">
+          <a href="https://youtu.be/r8dC0aSo9TM?si=-DHqDt8iHns7YJtQ" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://open.spotify.com/episode/2ZYGJM5oR9soViQD4GRyIt?si=ef8bd840fb2d495d" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
         </div>
-
-        <!-- Ep 21 -->
-        <div class="podcast-card">
-          <img class="podcast-thumb" src="https://img.youtube.com/vi/AWK2Yf_DIpY/hqdefault.jpg" alt="Ep21 thumbnail" />
-          <h3>Masters &amp; Life in US — Sudesh Pawar (Amazon SDE) (Ep. 21)</h3>
-          <p>Grad school, life in the U.S., and pathways to Amazon SDE.</p>
-          <div class="podcast-links">
-            <a class="btn btn-link" href="https://youtu.be/AWK2Yf_DIpY?si=ZTkIQvb64nf2nB-L" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-            <a class="btn btn-link" href="https://open.spotify.com/episode/5m3jXnuYJxnxyFlIbfeZht?si=b73c2fbce54d4d6b" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
-          </div>
-        </div>
-
-        <!-- Ep 22 -->
-        <div class="podcast-card">
-          <img class="podcast-thumb" src="https://img.youtube.com/vi/0LV3daQgKtM/hqdefault.jpg" alt="Ep22 thumbnail" />
-          <h3>Ph.D. Realities — Smriti Chhibber: IISER → Johns Hopkins (Ep. 22)</h3>
-          <p>Life as a Ph.D. student in the U.S., research highs & lows, and mindset.</p>
-          <div class="podcast-links">
-            <a class="btn btn-link" href="https://youtu.be/0LV3daQgKtM?si=7IHnn8tMfiSymUwX" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-            <a class="btn btn-link" href="https://open.spotify.com/episode/2vuuLptQSTARi5KSRDtwmc?si=33fc204fc5884b7f" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
-          </div>
-        </div>
-
-        <!-- Ep 23 -->
-        <div class="podcast-card">
-          <img class="podcast-thumb" src="https://img.youtube.com/vi/plFVYN4OB_U/hqdefault.jpg" alt="Ep23 thumbnail" />
-          <h3>Building Tomorrow with AI — Kabeer Ahmed Merchant (Existence Co-founder) (Ep. 23)</h3>
-          <p>Founding an AI startup, vision for agentic tools, and product thinking.</p>
-          <div class="podcast-links">
-            <a class="btn btn-link" href="https://youtu.be/plFVYN4OB_U?si=TIAhiwU0Lk6FtR1U" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-            <a class="btn btn-link" href="https://open.spotify.com/episode/5hRdVhZ80hWUqkyPHKfc0f?si=f6b08eb643644100" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
-          </div>
-        </div>
-
       </div>
+
+      <div class="podcast-card">
+        <h3>Episode 2</h3>
+        <p>Conversations on AI, Startups, and Beyond</p>
+        <div class="podcast-links">
+          <a href="https://youtu.be/AWK2Yf_DIpY?si=ZTkIQvb64nf2nB-L" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://open.spotify.com/episode/5m3jXnuYJxnxyFlIbfeZht?si=b73c2fbce54d4d6b" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+        </div>
+      </div>
+
+      <div class="podcast-card">
+        <h3>Episode 3</h3>
+        <p>Diving into personal journeys & problem-solving</p>
+        <div class="podcast-links">
+          <a href="https://youtu.be/0LV3daQgKtM?si=7IHnn8tMfiSymUwX" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://open.spotify.com/episode/2vuuLptQSTARi5KSRDtwmc?si=33fc204fc5884b7f" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+        </div>
+      </div>
+
+      <div class="podcast-card">
+        <h3>Episode 4</h3>
+        <p>Stories from innovators shaping the AI future</p>
+        <div class="podcast-links">
+          <a href="https://youtu.be/plFVYN4OB_U?si=TIAhiwU0Lk6FtR1U" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://open.spotify.com/episode/5hRdVhZ80hWUqkyPHKfc0f?si=f6b08eb643644100" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <section id="contact" class="section reveal">
+  <section id="contact" class="section">
     <h1>Get in Touch</h1>
     <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
     
     <div class="contact-info">
-      <p><i class="fas fa-envelope"></i> <a class="btn-link" href="mailto:tiwariaparimeya@gmail.com">tiwariaparimeya@gmail.com</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:tiwariaparimeya@gmail.com">tiwariaparimeya@gmail.com</a></p>
     </div>
 
     <div class="social-links">
-      <a class="btn-link" href="https://www.linkedin.com/in/aparimeya-tiwari-76a252252/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a class="btn-link" href="https://github.com/AparimeyaTiwari" target="_blank"><i class="fab fa-github"></i></a>
-      <a class="btn-link" href="https://x.com/Aparimeya_Tiw" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a class="btn-link" href="https://youtube.com/@entranceandbeyond?si=Z8vALk65yvK0W343" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.linkedin.com/in/aparimeya-tiwari-76a252252/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/AparimeyaTiwari" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://x.com/Aparimeya_Tiw" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://youtube.com/@entranceandbeyond?si=Z8vALk65yvK0W343" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
   </section>
 
-  <!-- Micro-interactions & reveal-on-scroll -->
-  <script>
-    // Reveal on scroll
-    const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('revealed');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => io.observe(el));
-
-    // Ripple effect for any .btn or .btn-link
-    function addRipple(e) {
-      const target = e.currentTarget;
-      const circle = document.createElement('span');
-      const diameter = Math.max(target.clientWidth, target.clientHeight);
-      const rect = target.getBoundingClientRect();
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${e.clientX - rect.left - diameter / 2}px`;
-      circle.style.top = `${e.clientY - rect.top - diameter / 2}px`;
-      circle.classList.add('ripple');
-      const old = target.getElementsByClassName('ripple')[0];
-      if (old) old.remove();
-      target.appendChild(circle);
-    }
-    document.querySelectorAll('.btn, .btn-link').forEach(el => {
-      el.style.position = el.style.position || 'relative';
-      el.addEventListener('click', addRipple);
-    });
-  </script>
-
   <script src="script.js"></script>
 </body>
+
 </html>
