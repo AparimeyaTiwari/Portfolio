@@ -5,106 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aparimeya Tiwari | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-  <style>
-    :root {
-      --accent: #6c63ff;
-      --accent-2: #00d4ff;
-      --bg: #0b0c10;
-      --card: #16171f;
-      --card-hover: #1f202c;
-      --text: #e5e6f0;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Orbitron', sans-serif; }
-    body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
-
-    /* Navbar */
-    .navbar {
-      position: fixed; top: 0; width: 100%;
-      display: flex; justify-content: center;
-      background: rgba(11, 12, 16, .9); backdrop-filter: blur(10px);
-      z-index: 1000; padding: 12px 0;
-    }
-    .navbar ul { display: flex; list-style: none; gap: 24px; }
-    .navbar a {
-      text-decoration: none; color: var(--text);
-      transition: color .3s ease;
-      position: relative; padding: 6px 10px;
-    }
-    .navbar a:hover { color: var(--accent-2); }
-    .navbar a::after {
-      content: ""; position: absolute; bottom: 0; left: 0; height: 2px; width: 0;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      transition: width .3s ease;
-    }
-    .navbar a:hover::after { width: 100%; }
-
-    /* Hero */
-    .hero-section {
-      display: flex; align-items: center; justify-content: center;
-      min-height: 100vh; padding: 100px 20px 60px;
-      text-align: center;
-      background: linear-gradient(145deg, #0f0f1a, #141429, #0f0f1a);
-      animation: bgmove 8s ease-in-out infinite alternate;
-    }
-    @keyframes bgmove { 0%{background-position:0% 50%;} 100%{background-position:100% 50%;} }
-    .hero-name { font-size: 3rem; color: var(--accent); animation: float 4s ease-in-out infinite; }
-    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
-    .hero-title { margin-top: 10px; font-size: 1.2rem; color: var(--text); }
-    .hero-buttons { margin-top: 20px; }
-    .btn {
-      display: inline-block; margin: 8px; padding: 10px 20px;
-      border-radius: 25px; color: var(--text); background: var(--card);
-      border: 1px solid var(--accent); text-decoration: none;
-      transition: all .3s ease; position: relative; overflow: hidden;
-    }
-    .btn:hover { background: var(--accent); color: #fff; transform: translateY(-3px); }
-
-    /* Sections */
-    .section { padding: 80px 20px; max-width: 1000px; margin: auto; }
-    .section h1 { font-size: 2rem; margin-bottom: 20px; text-align: center; color: var(--accent); }
-
-    .project, .podcast-card, .skills-category {
-      background: var(--card); padding: 20px; border-radius: 16px;
-      margin-bottom: 20px; transition: transform .3s ease, background .3s ease;
-    }
-    .project:hover, .podcast-card:hover, .skills-category:hover {
-      transform: translateY(-5px); background: var(--card-hover);
-    }
-
-    /* Podcast */
-    .podcast-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; }
-    .podcast-thumb { width: 100%; border-radius: 12px; margin-bottom: 10px; }
-
-    /* Skills */
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
-    .skills-grid span {
-      background: #1d1d2c; padding: 6px 14px; border-radius: 20px;
-      border: 1px solid rgba(255,255,255,.1); font-size: 0.9rem;
-      transition: background .3s ease, transform .2s ease;
-    }
-    .skills-grid span:hover { background: var(--accent); transform: scale(1.05); }
-
-    /* Contact */
-    .contact-info p, .social-links a { text-align: center; margin: 8px 0; }
-    .social-links { display: flex; justify-content: center; gap: 16px; margin-top: 10px; }
-    .social-links a { color: var(--text); font-size: 1.5rem; transition: color .3s ease, transform .2s ease; }
-    .social-links a:hover { color: var(--accent-2); transform: scale(1.2); }
-
-    /* Reveal Animations */
-    .reveal { opacity: 0; transform: translateY(20px); transition: all .8s ease; }
-    .reveal.revealed { opacity: 1; transform: none; }
-  </style>
 </head>
 
 <body>
+  <!-- Background -->
+  <div class="background-text">Aparimeya <span class="highlight">Tiwari</span></div>
+
+  <!-- Navbar -->
   <nav class="navbar">
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#college">College</a></li>
+      <li><a href="#college">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#resume">Resume</a></li>
@@ -113,22 +28,33 @@
     </ul>
   </nav>
 
+  <!-- Hero -->
   <section class="hero-section">
-    <div>
-      <h1 class="hero-name">Aparimeya Tiwari</h1>
-      <p class="hero-title">Developer • AI Enthusiast • Podcast Host</p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn"><i class="fas fa-code"></i> View Projects</a>
-        <a href="#contact" class="btn"><i class="fas fa-envelope"></i> Contact Me</a>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-name">Aparimeya Tiwari</h1>
+        <p class="hero-title">Developer • AI Enthusiast • Podcast Host</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary-btn"><i class="fas fa-code"></i> View Projects</a>
+          <a href="#contact" class="btn secondary-btn"><i class="fas fa-envelope"></i> Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/profile/profile.png" alt="Aparimeya Tiwari" class="profile-image" />
       </div>
     </div>
   </section>
 
+  <!-- About -->
   <section id="about" class="section reveal">
     <h1>About Me</h1>
-    <p>I'm Aparimeya Tiwari, a developer and podcast host based in Pune, India. I specialize in building AI-powered solutions, Retrieval-Augmented Generation pipelines, and backend systems. Outside coding, I host <b>Entrance & Beyond</b>, a podcast where I converse with FAANG interns, startup founders, and PhD scholars.</p>
+    <p>I'm Aparimeya Tiwari, a developer and podcast host based in Pune, India. I specialize in building AI-powered
+      solutions, Retrieval-Augmented Generation pipelines, and backend systems. Currently exploring <b>Agentic AI</b>, I
+      am working on deploying impactful AI applications. Outside coding, I host <b>Entrance & Beyond</b>, a podcast
+      where I converse with FAANG interns, startup founders, and PhD scholars.</p>
   </section>
 
+  <!-- Education -->
   <section id="college" class="section reveal">
     <h1>Education</h1>
     <div class="project">
@@ -138,11 +64,12 @@
     </div>
   </section>
 
+  <!-- Projects -->
   <section id="projects" class="section reveal">
     <h1>Featured Projects</h1>
     <div class="project">
       <h2>Lawgic - AI Legal Agent</h2>
-      <p>A multilingual, voice-enabled AI assistant for Indian legal laws. Built with Azure AI, Chainlit, and Flask.</p>
+      <p>A multilingual, voice-enabled AI assistant for Indian laws. Built with Azure AI, Chainlit, and Flask.</p>
     </div>
     <div class="project">
       <h2>MSQ Bot - Podcast Questionnaire Generator</h2>
@@ -154,48 +81,24 @@
     </div>
   </section>
 
+  <!-- Skills -->
   <section id="skills" class="section reveal">
     <h1>Technical Skills</h1>
-
-    <div class="skills-category">
-      <h2>Languages</h2>
-      <div class="skills-grid">
-        <span>C++</span><span>Python</span><span>C</span><span>MySQL</span>
-      </div>
-    </div>
-
-    <div class="skills-category">
-      <h2>Backend & AI</h2>
-      <div class="skills-grid">
-        <span>Flask</span><span>Retrieval-Augmented Generation</span>
-        <span>Azure AI</span><span>Streamlit</span>
-        <span>Chainlit</span><span>Ollama</span>
-      </div>
-    </div>
-
-    <div class="skills-category">
-      <h2>Tools & Cloud</h2>
-      <div class="skills-grid">
-        <span>Git</span><span>SQL</span><span>AWS (Basic)</span>
-        <span>Azure</span><span>Machine Learning</span><span>Artificial Intelligence</span>
-      </div>
-    </div>
-
-    <div class="skills-category">
-      <h2>Coursework</h2>
-      <div class="skills-grid">
-        <span>Computer Networks</span><span>Operating Systems</span>
-        <span>Object-Oriented Programming</span><span>DBMS</span><span>AI</span>
-      </div>
+    <div class="skills-grid">
+      <span>C++</span><span>Python</span><span>C</span><span>Flask</span>
+      <span>MySQL</span><span>Chainlit</span><span>Azure</span><span>AWS</span>
+      <span>Ollama</span><span>Semantic Kernel</span>
     </div>
   </section>
 
+  <!-- Resume -->
   <section id="resume" class="section reveal">
     <h1>Resume</h1>
     <p>Download my detailed resume:</p>
     <a href="Aparimeya_Tiwari_.pdf" download class="btn"><i class="fas fa-download"></i> Download PDF</a>
   </section>
 
+  <!-- Podcasts -->
   <section id="podcast" class="section reveal">
     <h1>Entrance & Beyond Podcast</h1>
     <div class="podcast-grid">
@@ -226,6 +129,7 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="section reveal">
     <h1>Get in Touch</h1>
     <p>Email me at <a href="mailto:tiwariaparimeya@gmail.com">tiwariaparimeya@gmail.com</a></p>
@@ -237,15 +141,6 @@
     </div>
   </section>
 
-  <script>
-    // Reveal on scroll
-    const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(el => io.observe(el));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
