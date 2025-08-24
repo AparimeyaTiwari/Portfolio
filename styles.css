@@ -1,4 +1,397 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+%; 
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent); 
+  transition: left 0.5s ease; 
+} 
+
+.skill-tag:hover::before { 
+  left: 100%; 
+} 
+
+.skill-tag:hover { 
+  background: rgba(0, 255, 255, 0.2); 
+  transform: translateY(0) scale(1.05); 
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2); 
+}
+
+/* Podcast Section */
+.podcast-intro {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  background: rgba(0, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.podcast-intro:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+}
+
+.podcast-logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.podcast-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.podcast-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+.podcast-description p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+}
+
+.podcast-platforms {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.platform-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid;
+}
+
+.platform-btn.youtube {
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
+.platform-btn.youtube:hover {
+  background: rgba(255, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.platform-btn.spotify {
+  border-color: #1db954;
+  color: #1db954;
+}
+
+.platform-btn.spotify:hover {
+  background: rgba(29, 185, 84, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(29, 185, 84, 0.3);
+}
+
+.recent-episodes h2 {
+  color: #0ff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.episode-card {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.episode-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.15);
+}
+
+.episode-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.episode-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+}
+
+.episode-card:hover .episode-thumbnail img {
+  transform: scale(1.05);
+}
+
+.episode-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.episode-overlay i {
+  color: #000;
+  font-size: 1.5rem;
+  margin-left: 3px;
+}
+
+.episode-content {
+  padding: 1.5rem;
+}
+
+.episode-content h3 {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 2px solid #ff0000;
+  color: #ff0000;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.watch-btn:hover {
+  background: rgba(255, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+/* Resume Section */
+.resume-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.resume-text {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.5rem;
+  background: linear-gradient(135deg, #0ff, #ff00ff);
+  color: #000;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.download-btn:hover::before {
+  left: 100%;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.4);
+}
+
+.download-btn i {
+  font-size: 1.2rem;
+}
+
+/* Contact Section */
+.contact-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.contact-info {
+  margin-bottom: 2.5rem;
+}
+
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(0, 255, 255, 0.05);
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  color: #0ff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-email::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-email:hover::before {
+  left: 100%;
+}
+
+.contact-email:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+}
+
+.contact-email i {
+  font-size: 1.3rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover::before {
+  transform: scale(1);
+}
+
+.social-link.linkedin {
+  border: 2px solid #0077b5;
+  color: #0077b5;
+}
+
+.social-link.linkedin::before {
+  background: #0077b5;
+}
+
+.social-link.linkedin:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
+}
+
+.social-link.github {
+  border: 2px solid #333;
+  color: #333;
+}
+
+.social-link.github::before {
+  background: #333;
+}
+
+.social-link.github:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 /* Reset and Base Styles */
 * {
