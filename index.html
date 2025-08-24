@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,10 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
-
 <body>
+
   <div class="background-text">Aparimeya <span class="highlight">Tiwari</span></div>
-  
+
+  <!-- Navbar -->
   <nav class="navbar">
     <ul>
       <li><a href="#about">About Me</a></li>
@@ -26,22 +26,7 @@
     </ul>
   </nav>
 
-  <section class="hero-section">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-name">Aparimeya Tiwari</h1>
-        <p class="hero-title">Developer • AI Enthusiast • Podcast Host</p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn primary-btn"><i class="fas fa-code"></i> View Projects</a>
-          <a href="#contact" class="btn secondary-btn"><i class="fas fa-envelope"></i> Contact Me</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="assets/images/profile/profile.png" alt="Aparimeya Tiwari" class="profile-image" />
-      </div>
-    </div>
-  </section>
-
+  <!-- About Section -->
   <section id="about" class="section">
     <h1>About Me</h1>
     <div class="about-content">
@@ -69,6 +54,7 @@
     </div>
   </section>
 
+  <!-- Education Section -->
   <section id="college" class="section">
     <h1>Education</h1>
     <div class="project">
@@ -80,11 +66,17 @@
     </div>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="section">
     <h1>Featured Projects</h1>
+
     <div class="project">
-      <h2>Lawgic - Law AI Agent</h2>
-      <p>An innovative AI-powered multilingual agent designed to revolutionize the Indian legal ecosystem. Built using Azure AI, Chainlit, and Semantic Kernel, Lawgic helps users navigate complex legal queries in multiple Indian languages.</p>
+      <h2>Lawgic – Law AI Agent</h2>
+      <ul>
+        <li>Built multilingual legal AI using Azure AI, Chainlit, and Semantic Kernel</li>
+        <li>Implemented advanced NLP for legal document analysis</li>
+        <li>Developed user-friendly interface via Chainlit</li>
+      </ul>
       <div class="project-links">
         <a href="https://github.com/AparimeyaTiwari/YC_LAWGIC" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://youtu.be/OgEoEoIMP5s" target="_blank"><i class="fab fa-youtube"></i> Demo Video</a>
@@ -92,8 +84,12 @@
     </div>
 
     <div class="project">
-      <h2>MSQ Bot Podcast - AI Podcast Generator</h2>
-      <p>An AI system that automates podcast questionnaire creation by analyzing guest profiles and topic context. Built with Flask and Ollama to streamline podcast preparation.</p>
+      <h2>MSQ Bot Podcast – AI Podcast Generator</h2>
+      <ul>
+        <li>Auto-generates podcast questions using Flask and Ollama</li>
+        <li>Uses guest/context analysis for tailored questionnaires</li>
+        <li>Reduces prep time by 60%</li>
+      </ul>
       <div class="project-links">
         <a href="https://github.com/AparimeyaTiwari/MSQ_Bot_Podcast" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://youtu.be/gjWOJteTW6M" target="_blank"><i class="fab fa-youtube"></i> Demo Video</a>
@@ -101,81 +97,80 @@
     </div>
 
     <div class="project">
-      <h2>CA Automation Tool (ongoing)</h2>
-      <p>Developing an LLM-powered tool to automate and streamline financial record updates for CAs.</p>
+      <h2>CA Automation Tool (Ongoing)</h2>
+      <ul>
+        <li>Automates trial balance tasks with OpenPyXL</li>
+        <li>Integrates LLMs for smarter financial processing</li>
+        <li>Aims to minimize manual work while ensuring high accuracy</li>
+      </ul>
     </div>
 
     <div class="project">
       <h2>ProctoCam</h2>
-      <p>A computer vision-based proctoring tool using OpenCV to detect unfair practices during online exams.</p>
+      <ul>
+        <li>Computer vision tool using OpenCV for online exam proctoring</li>
+        <li>Detects suspicious behavior and cheating scenarios</li>
+      </ul>
       <div class="project-links">
         <a href="https://github.com/AparimeyaTiwari/ProctoCam" target="_blank"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </div>
+
   </section>
 
+  <!-- Skills Section -->
   <section id="skills" class="section">
     <h1>Technical Skills</h1>
 
     <div class="skills-category">
       <h2>Languages</h2>
       <div class="skills-grid">
-        <span>C++</span>
-        <span>Python</span>
-        <span>C</span>
-        <span>MySQL</span>
+        <span>C++</span><span>Python</span><span>C</span><span>MySQL</span>
       </div>
     </div>
 
     <div class="skills-category">
       <h2>Backend & AI</h2>
       <div class="skills-grid">
-        <span>Flask</span>
-        <span>Retrieval-Augmented Generation</span>
-        <span>Azure AI</span>
-        <span>Streamlit</span>
-        <span>Chainlit</span>
-        <span>Ollama</span>
+        <span>Flask</span><span>Retrieval-Augmented Generation</span><span>Azure AI</span><span>Streamlit</span>
+        <span>Chainlit</span><span>Ollama</span>
       </div>
     </div>
 
     <div class="skills-category">
       <h2>Tools & Cloud</h2>
       <div class="skills-grid">
-        <span>Git</span>
-        <span>SQL</span>
-        <span>Basic AWS</span>
-        <span>Azure</span>
-        <span>Machine Learning</span>
-        <span>Artificial Intelligence</span>
+        <span>Git</span><span>SQL</span><span>Basic AWS</span><span>Azure</span>
+        <span>Machine Learning</span><span>Artificial Intelligence</span>
       </div>
     </div>
 
     <div class="skills-category">
       <h2>Coursework</h2>
       <div class="skills-grid">
-        <span>Computer Networks</span>
-        <span>Operating Systems</span>
-        <span>Object-Oriented Programming</span>
-        <span>Database Management System</span>
-        <span>Artificial Intelligence</span>
+        <span>Computer Networks</span><span>Operating Systems</span><span>Object-Oriented Programming</span>
+        <span>Database Management System</span><span>Artificial Intelligence</span>
       </div>
     </div>
+
   </section>
 
+  <!-- Resume Section -->
   <section id="resume" class="section">
     <h1>Resume</h1>
     <p>Download my detailed resume to learn more about my experience and qualifications.</p>
     <a href="Aparimeya_Tiwari_.pdf" download class="btn"><i class="fas fa-download"></i> Download PDF</a>
   </section>
 
+  <!-- Podcast Section with Updated Episode Thumbnails -->
   <section id="podcast" class="section">
     <h1>Entrance & Beyond Podcast</h1>
     <div class="podcast-header">
-      <img src="assets/images/podcast/entrance_and_beyond_logo.png" alt="Entrance & Beyond Podcast Logo" class="podcast-logo" />
+      <img src="https://yt3.googleusercontent.com/ytc/AIdro_nZl61p6EM1O8QqAoxs7l9j3SCXz5m9oB0nlA=s176-c-k-c0x00ffffff-no-rj" 
+           alt="Entrance & Beyond Podcast Logo" class="podcast-logo" />
       <p>A tech podcast series exploring FAANG, Startups, and AI. Join me as I interview industry experts and share insights about technology and career development.</p>
     </div>
-    
+
     <div class="podcast-platforms">
       <a href="https://www.youtube.com/@EntranceAndBeyond" target="_blank" class="btn"><i class="fab fa-youtube"></i> YouTube</a>
       <a href="https://open.spotify.com/show/2NJeKxxme97rYMlDPtAKFA?si=20820f9d23c54e58" target="_blank" class="btn"><i class="fab fa-spotify"></i> Spotify</a>
@@ -185,44 +180,39 @@
       <h2>Recent Episodes</h2>
 
       <div class="podcast-card">
+        <img src="https://img.youtube.com/vi/r8dC0aSo9TM/maxresdefault.jpg" alt="Richa Rathi Episode Thumbnail" class="episode-thumb"/>
         <h3>How She Broke Into Microsoft & Wells Fargo in 3rd Year | Richa Rathi | Episode 20</h3>
-        <div class="podcast-links">
-          <a href="https://youtu.be/r8dC0aSo9TM" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        </div>
+        <a href="https://youtu.be/r8dC0aSo9TM" target="_blank"><i class="fab fa-youtube"></i> Watch</a>
       </div>
 
       <div class="podcast-card">
-        <h3>Building Tomorrow with AI | Kabeer Ahmed Merchant, Co-founder of Existence | Ep. 23</h3>
-        <div class="podcast-links">
-          <a href="https://youtu.be/0LV3daQgKtM" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        </div>
+        <img src="https://img.youtube.com/vi/0LV3daQgKtM/maxresdefault.jpg" alt="Kabeer Merchant Episode Thumbnail" class="episode-thumb"/>
+        <h3>Building Tomorrow with AI | Kabeer Ahmed Merchant | Ep. 23</h3>
+        <a href="https://youtu.be/0LV3daQgKtM" target="_blank"><i class="fab fa-youtube"></i> Watch</a>
       </div>
 
       <div class="podcast-card">
+        <img src="https://img.youtube.com/vi/plFVYN4OB_U/maxresdefault.jpg" alt="Smriti Chhibber Episode Thumbnail" class="episode-thumb"/>
         <h3>Ph.D. Realities: Smriti Chhibber’s IISER to Johns Hopkins Journey | Episode 17</h3>
-        <div class="podcast-links">
-          <a href="https://youtu.be/plFVYN4OB_U" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        </div>
+        <a href="https://youtu.be/plFVYN4OB_U" target="_blank"><i class="fab fa-youtube"></i> Watch</a>
       </div>
 
       <div class="podcast-card">
+        <img src="https://img.youtube.com/vi/AWK2Yf_DIpY/maxresdefault.jpg" alt="Sudesh Pawar Episode Thumbnail" class="episode-thumb"/>
         <h3>Masters & Life in US | Sudesh Pawar | SDE Amazon | Episode 21</h3>
-        <div class="podcast-links">
-          <a href="https://youtu.be/AWK2Yf_DIpY" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        </div>
+        <a href="https://youtu.be/AWK2Yf_DIpY" target="_blank"><i class="fab fa-youtube"></i> Watch</a>
       </div>
 
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="section">
     <h1>Get in Touch</h1>
     <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-    
     <div class="contact-info">
       <p><i class="fas fa-envelope"></i> <a href="mailto:tiwariaparimeya@gmail.com">tiwariaparimeya@gmail.com</a></p>
     </div>
-
     <div class="social-links">
       <a href="https://www.linkedin.com/in/aparimeya-tiwari-76a252252/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/AparimeyaTiwari" target="_blank"><i class="fab fa-github"></i></a>
@@ -233,5 +223,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
